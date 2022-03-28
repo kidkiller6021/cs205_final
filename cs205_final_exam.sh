@@ -7,6 +7,26 @@
 #    Avg. Defense: [VALUE]
 # ======= END SUMMARY =======
 
+awk ' 
+BEGIN{FS="\t"} { 
+if (NR!=1) 
+  {
+  Legendary+=$17
+  totalHP+=$8
+  totalDefense+=$10 
+  numOfPokemon+=1
+  }
+  
+}
+
+END {
+print"======= SUMMARY OF POKEMON.DAT ======"\n";
+print"  Total Non-Legendary Pokemon: "numOfPokemon - Legendary;
+print"\n  Avg. HP: "totalHP / numOfPokemon;
+print"\n  Avg. Defense: "totalDefense / numOfPokemon"\n";
+print"======= END SUMMARY =======\n"
+}' pokemon.dat
+
 # NOTE THAT YOU MUST USE AWK OR YOU WILL LOSE POINTS
 # The "Avg." values should be calculated as mean values for the corresponding columns.
 # The averages must only be for non-legendary pokemon.
