@@ -11,20 +11,23 @@ awk '
 BEGIN{FS="\t"} { 
 if (NR!=1) 
   {
-  Legendary+=$17
-  totalHP+=$8
-  totalDefense+=$10 
+  if ($13 == "True")
+    {
+      Legendary+=1
+    }
+  totalHP+=$6
+  totalDefense+=$8 
   numOfPokemon+=1
   }
   
 }
 
 END {
-print"======= SUMMARY OF POKEMON.DAT ======"
-print"  Total Non-Legendary Pokemon: "numOfPokemon - Legendary
-print"  Avg. HP: "totalHP / numOfPokemon
-print"  Avg. Defense: "totalDefense / numOfPokemon
-print"======= END SUMMARY ======="
+print"======= SUMMARY OF POKEMON.DAT ======""\n";
+print"  Total Non-Legendary Pokemon: "numOfPokemon - Legendary;
+print"\n  Avg. HP: "totalHP / numOfPokemon;
+print"\n  Avg. Defense: "totalDefense / numOfPokemon;
+print"======= END SUMMARY =======\n";
 }' pokemon.dat
 
 # NOTE THAT YOU MUST USE AWK OR YOU WILL LOSE POINTS
