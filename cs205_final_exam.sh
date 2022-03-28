@@ -20,11 +20,11 @@ if (NR!=1)
 }
 
 END {
-print"======= SUMMARY OF POKEMON.DAT ======"\n";
-print"  Total Non-Legendary Pokemon: "numOfPokemon - Legendary;
-print"\n  Avg. HP: "totalHP / numOfPokemon;
-print"\n  Avg. Defense: "totalDefense / numOfPokemon"\n";
-print"======= END SUMMARY =======\n"
+print"======= SUMMARY OF POKEMON.DAT ======"
+print"  Total Non-Legendary Pokemon: "numOfPokemon - Legendary
+print"  Avg. HP: "totalHP / numOfPokemon
+print"  Avg. Defense: "totalDefense / numOfPokemon
+print"======= END SUMMARY ======="
 }' pokemon.dat
 
 # NOTE THAT YOU MUST USE AWK OR YOU WILL LOSE POINTS
